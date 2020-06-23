@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: email-service
+          uri: lb://Email
+          predicates:
+            - Path=/emails/**
+        - id: user-service
+          uri: lb://User
+          predicates:
+            - Path=/users/**
