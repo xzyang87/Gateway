@@ -1,12 +1,24 @@
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: email-service
-          uri: lb://Email
-          predicates:
-            - Path=/emails/**
-        - id: user-service
-          uri: lb://User
-          predicates:
-            - Path=/users/**
+server:
+  port: 9000
+
+#spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        - id: email-service
+##          uri: lb://email
+#          uri: http://localhost:8081/
+#          predicates:
+#            - Path=/emails/**
+#        - id: email-service
+##          uri: lb://email
+#          uri: http://localhost:8082/
+#          predicates:
+#            - Path=/emails/**
+#        - id: user-service
+##          uri: lb://user
+#          uri: http://localhost:8080/
+#          predicates:
+#            - Path=/users/**
+#  application:
+#    name: gateway-server
