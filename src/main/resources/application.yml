@@ -6,18 +6,11 @@ spring:
     gateway:
       routes:
         - id: email-service
-#          uri: lb://email
-          uri: http://localhost:8081/
-          predicates:
-            - Path=/emails/**
-        - id: email-service
-#          uri: lb://email
-          uri: http://localhost:8082/
+          uri: lb://email
           predicates:
             - Path=/emails/**
         - id: user-service
-#          uri: lb://user
-          uri: http://localhost:8080/
+          uri: lb://user
           predicates:
             - Path=/users/**
   application:
